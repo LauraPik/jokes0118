@@ -1,7 +1,9 @@
+import { SEARCH } from "./actionNames"
+
 
 export const search=(data)=>{
     return{
-        type:"Set search",
+        type:SEARCH,
         payload: data
     }
 }

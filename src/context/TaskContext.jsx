@@ -1,11 +1,13 @@
 import React, { useContext, useReducer, useState } from "react";
 import TodoReducer from "../reducers/TodoReducer";
+import { Service } from "../services/Service";
 
 
 const AppContext = React.createContext(); 
 
 const initialState = {
     jokes: [],
+    query: "joy"
   };
 
 const AppProvider = ({children})=>{

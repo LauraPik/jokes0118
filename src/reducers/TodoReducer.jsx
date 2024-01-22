@@ -1,11 +1,12 @@
-
+import { SEARCH } from "../action/actionNames";
 
 const TodoReducer = (state, action)=>{
     switch(action.type){
-        case "Set search":
+        case SEARCH:
             return{
                 ...state,
-                tasks:[...state.tasks, action.payload]
+                tasks:[...state.tasks, action.payload],
+                query:""
             }
             default:
                 return state;
