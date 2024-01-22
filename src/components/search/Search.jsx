@@ -1,13 +1,26 @@
+import React from 'react';
+import { useGlobalContext } from '../../context/TaskContext';
 
+const Search = (props) => {
+  const { jokes, fetchJokes } = useGlobalContext();
 
-const Search = (props) =>{
+  const handleFetch = async () => {
+    await fetchJokes();
+    console.log(jokes)
+
+  };
+
+  return (
+    <div>
+      {jokes.map((joke, i) => (
+        <p key={i}>{joke.joke}</p>
+      ))}
+      <button onClick={handleFetch}>Fetch jokes</button>
+    </div>
+  );
+
+};
   
-    return(
-      <>
-      </>
-    )
-   
 
-}
 
-export default Search
+export default Search;
